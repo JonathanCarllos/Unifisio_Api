@@ -1,0 +1,14 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Unifisio_Api.Models;
+
+namespace Unifisio_Api.Context
+{
+    public class AppDbContext : DbContext
+    {
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+
+        public DbSet<Paciente> Pacientes { get; set; }
+        public DbSet<Fisioterapeuta> Fisioterapeutas { get; set; }        
+
+    }
+}
