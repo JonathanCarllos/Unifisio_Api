@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace Unifisio_Api.Models
 {
@@ -50,7 +51,9 @@ namespace Unifisio_Api.Models
         [MaxLength(50), Required]
         public string? Estado { get; set; }
 
+       
         public Paciente? Paciente { get; set; }
+
         public int PacienteId { get; set; }
 
     }
