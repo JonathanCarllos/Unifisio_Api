@@ -96,5 +96,6 @@ namespace Unifisio_Api.DTOs
         [MaxLength(255), Required]
         public string? ObsMedica { get; set; }
         public ICollection<Fisioterapeuta>? Fisioterapeutas { get; set; }
+        public ICollection<HistoricoClinico>? HistoricosClinicos { get; set; }
     }
 }

@@ -26,8 +26,11 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddScoped<IFisioterapeutaService, FisioterapeutaService>();
 builder.Services.AddScoped<IPacienteService, PacienteService>();
+builder.Services.AddScoped<IHistoricoClinicoService, HistoricoClinicoService>();
+
 builder.Services.AddScoped<IFisioterapeutaRepository, FisioterapeutaRepository>();
 builder.Services.AddScoped<IPacienteRepository, PacienteRepository>();
+builder.Services.AddScoped<IHistoricoClinicoRepository, HistoricoClinicoRepository>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
