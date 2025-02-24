@@ -10,6 +10,7 @@ namespace Unifisio_Api.DTOs.Mappings
             CreateMap<Paciente, PacienteDTO>().ReverseMap();
             CreateMap<Fisioterapeuta, FisioterapeutaDTO>().ReverseMap();
             CreateMap<HistoricoClinico, HistoricoClinicoDTO>().ReverseMap();
+            CreateMap<EvolucaoPaciente, EvolucaoPacienteDTO>().ReverseMap();
         }
     }
 }

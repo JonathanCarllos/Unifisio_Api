@@ -55,6 +55,5 @@ namespace Unifisio_Api.Models
         public Paciente? Paciente { get; set; }
 
         public int PacienteId { get; set; }
-
     }
 }

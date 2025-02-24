@@ -10,6 +10,7 @@ namespace Unifisio_Api.Context
         public DbSet<Paciente> Pacientes { get; set; }
         public DbSet<Fisioterapeuta> Fisioterapeutas { get; set; }      
         public DbSet<HistoricoClinico> HistoricoClinico { get; set; }
+        public DbSet<EvolucaoPaciente> EvolucaoPacientes { get; set; }
 
     }
 }
