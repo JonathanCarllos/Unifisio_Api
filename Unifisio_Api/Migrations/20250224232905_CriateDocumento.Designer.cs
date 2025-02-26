@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Unifisio_Api.Context;
 
@@ -11,9 +12,11 @@ using Unifisio_Api.Context;
 namespace Unifisio_Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250224232905_CriateDocumento")]
+    partial class CriateDocumento
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -349,33 +352,6 @@ namespace Unifisio_Api.Migrations
                     b.ToTable("Pacientes");
                 });
 
-            modelBuilder.Entity("Unifisio_Api.Models.PlanoTratamento", b =>
-                {
-                    b.Property<int>("PlanoTratamentoId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("PlanoTratamentoId"));
-
-                    b.Property<bool>("Concluido")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<int>("PacienteId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SessoesRealizadas")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TotalSessoes")
-                        .HasColumnType("int");
-
-                    b.HasKey("PlanoTratamentoId");
-
-                    b.HasIndex("PacienteId");
-
-                    b.ToTable("PlanoTratamentos");
-                });
-
             modelBuilder.Entity("Unifisio_Api.Models.DocumentoPaciente", b =>
                 {
                     b.HasOne("Unifisio_Api.Models.Paciente", "Paciente")
@@ -421,17 +397,6 @@ namespace Unifisio_Api.Migrations
                 {
                     b.HasOne("Unifisio_Api.Models.Paciente", "Paciente")
                         .WithMany("HistoricosClinicos")
-                        .HasForeignKey("PacienteId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Paciente");
-                });
-
-            modelBuilder.Entity("Unifisio_Api.Models.PlanoTratamento", b =>
-                {
-                    b.HasOne("Unifisio_Api.Models.Paciente", "Paciente")
-                        .WithMany()
                         .HasForeignKey("PacienteId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
