@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Unifisio_Api.Context;
 
@@ -11,9 +12,11 @@ using Unifisio_Api.Context;
 namespace Unifisio_Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250228225907_AtualizadoFisioterapeuta")]
+    partial class AtualizadoFisioterapeuta
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -209,36 +212,6 @@ namespace Unifisio_Api.Migrations
                     b.HasIndex("PacienteId");
 
                     b.ToTable("HistoricoClinico");
-                });
-
-            modelBuilder.Entity("Unifisio_Api.Models.HorarioAtendimento", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("DiaSemana")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("varchar(20)");
-
-                    b.Property<bool>("Disponivel")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<int>("FisioterapeutaId")
-                        .HasColumnType("int");
-
-                    b.Property<TimeSpan>("HoraFim")
-                        .HasColumnType("time(6)");
-
-                    b.Property<TimeSpan>("HoraInicio")
-                        .HasColumnType("time(6)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("HorarioAtendimentos");
                 });
 
             modelBuilder.Entity("Unifisio_Api.Models.Paciente", b =>

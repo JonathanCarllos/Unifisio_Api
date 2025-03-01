@@ -27,6 +27,9 @@ namespace Unifisio_Api.Models
         [MaxLength(20),Required]
         public string? Crefito { get; set; }
 
+        [MaxLength(50), Required]
+        public string? Especialidade { get; set; }
+
         [MaxLength(20),Required]
         public string? Sexo { get; set; }
 

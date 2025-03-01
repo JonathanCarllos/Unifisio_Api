@@ -30,6 +30,7 @@ builder.Services.AddScoped<IHistoricoClinicoService, HistoricoClinicoService>();
 builder.Services.AddScoped<IEvolucaoPacienteService, EvolucaoPacienteService>();
 builder.Services.AddScoped<IDocumentoPacienteService, DocumentoPacienteService>();
 builder.Services.AddScoped<IPlanoTratamentoService, PlanoTratamentoService>();
+builder.Services.AddScoped<IHorarioAtendimentoService, HorarioAtendimentoService>();
 
 builder.Services.AddScoped<IFisioterapeutaRepository, FisioterapeutaRepository>();
 builder.Services.AddScoped<IPacienteRepository, PacienteRepository>();
@@ -37,6 +38,7 @@ builder.Services.AddScoped<IHistoricoClinicoRepository, HistoricoClinicoReposito
 builder.Services.AddScoped<IEvolucaoPacienteRepository, EvolucaoPacienteRepository>();
 builder.Services.AddScoped<IDocumentoPacienteRepository, DocumentoPacienteRepository>();
 builder.Services.AddScoped<IPlanoTratamentoRepository, PlanoTratamentoRepository>();
+builder.Services.AddScoped<IHorarioAtendimentoRepository, HorarioAtendimentoRepository>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
