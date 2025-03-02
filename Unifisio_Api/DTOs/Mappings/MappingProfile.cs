@@ -14,6 +14,7 @@ namespace Unifisio_Api.DTOs.Mappings
             CreateMap<DocumentoPaciente, DocumentoPacienteDTO>().ReverseMap();
             CreateMap<PlanoTratamento, PlanoTratamentoDTO>().ReverseMap();
             CreateMap<HorarioAtendimento, HorarioAtendimentoDTO>().ReverseMap();
+            CreateMap<ConsultaProcedimento, ConsultaProcedimentoDTO>().ReverseMap();
         }
     }
 }

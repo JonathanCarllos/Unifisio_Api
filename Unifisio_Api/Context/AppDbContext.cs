@@ -14,6 +14,7 @@ namespace Unifisio_Api.Context
         public DbSet<DocumentoPaciente> DocumentoPacientes { get; set; }
         public DbSet<PlanoTratamento> PlanoTratamentos { get; set; }
         public DbSet<HorarioAtendimento> HorarioAtendimentos { get; set; }
+        public DbSet<ConsultaProcedimento> ConsultaProcedimentos { get; set; }
 
     }
 }
