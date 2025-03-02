@@ -26,5 +26,7 @@ namespace Unifisio_Api.Models
 
         [StringLength(500, ErrorMessage = "A descrição pode ter no máximo 500 caracteres.")]
         public string? Descricao { get; set; }
+
+        public Fisioterapeuta? Fisioterapeuta { get; set; }
     }
 }

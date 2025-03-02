@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using Unifisio_Api.Models;
 
 namespace Unifisio_Api.DTOs
 {
@@ -22,5 +23,7 @@ namespace Unifisio_Api.DTOs
 
         [StringLength(500, ErrorMessage = "A descrição pode ter no máximo 500 caracteres.")]
         public string? Descricao { get; set; }
+
+        public Fisioterapeuta? Fisioterapeuta { get; set; }
     }
 }

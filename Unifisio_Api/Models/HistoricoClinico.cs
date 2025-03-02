@@ -14,7 +14,6 @@ namespace Unifisio_Api.Models
 
         [StringLength(255), Required]
         public string? Restricoes { get; set; }
-
         
         public Paciente? Paciente { get; set; }
         public int PacienteId { get; set; } 
