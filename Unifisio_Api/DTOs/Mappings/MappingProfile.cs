@@ -16,6 +16,7 @@ namespace Unifisio_Api.DTOs.Mappings
             CreateMap<HorarioAtendimento, HorarioAtendimentoDTO>().ReverseMap();
             CreateMap<ConsultaProcedimento, ConsultaProcedimentoDTO>().ReverseMap();
             CreateMap<RelatorioProdutividade, RelatorioProdutividadeDTO>().ReverseMap();
+            CreateMap<AgendamentoConsulta, AgendamentoConsultaDTO>().ReverseMap();
         }
     }
 }
