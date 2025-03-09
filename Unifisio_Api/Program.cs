@@ -34,6 +34,8 @@ builder.Services.AddScoped<IHorarioAtendimentoService, HorarioAtendimentoService
 builder.Services.AddScoped<IConsultaProcedimentosService, ConsultaProcedimentoService>();
 builder.Services.AddScoped<IRelatorioProdutividadeService, RelatorioProdutividadeService>();
 builder.Services.AddScoped<IAgendamentoConsultaService, AgendamentoConsultaService>();
+builder.Services.AddScoped<IFisioterapeutaDisponibilidadeService, FisioterapeutaDisponibilidadeService>();
+builder.Services.AddScoped<IRegistroPresencaService, RegistroPresencaService>();
 
 builder.Services.AddScoped<IFisioterapeutaRepository, FisioterapeutaRepository>();
 builder.Services.AddScoped<IPacienteRepository, PacienteRepository>();
@@ -45,6 +47,8 @@ builder.Services.AddScoped<IHorarioAtendimentoRepository, HorarioAtendimentoRepo
 builder.Services.AddScoped<IConsultaProcedimentoRepository, ConsultaProcedimentoRepository>();
 builder.Services.AddScoped<IRelatorioRepository, RelatorioRepository>();
 builder.Services.AddScoped<IAgendamentoConsultaRepository, AgendamentoConsultaRepository>();
+builder.Services.AddScoped<IFisioterapeutaDisponibilidadeRepository, FisioterapeutaDisponibilidadeRepository>();
+builder.Services.AddScoped<IRegistroPresencaRepository, RegistroPresencaRepository>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

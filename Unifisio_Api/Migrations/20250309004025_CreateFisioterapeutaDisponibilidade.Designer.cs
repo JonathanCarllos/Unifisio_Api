@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Unifisio_Api.Context;
 
@@ -11,9 +12,11 @@ using Unifisio_Api.Context;
 namespace Unifisio_Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250309004025_CreateFisioterapeutaDisponibilidade")]
+    partial class CreateFisioterapeutaDisponibilidade
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -78,38 +81,6 @@ namespace Unifisio_Api.Migrations
                     b.HasIndex("FisioterapeutaId");
 
                     b.ToTable("FisioterapeutaDisponibilidades");
-                });
-
-            modelBuilder.Entity("RegistroPresenca", b =>
-                {
-                    b.Property<int>("RegistroPresencaId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("RegistroPresencaId"));
-
-                    b.Property<bool>("Compareceu")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<DateTime>("DataAtendimento")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<int>("FisioterapeutaId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Observacoes")
-                        .HasColumnType("longtext");
-
-                    b.Property<int>("PacienteId")
-                        .HasColumnType("int");
-
-                    b.HasKey("RegistroPresencaId");
-
-                    b.HasIndex("FisioterapeutaId");
-
-                    b.HasIndex("PacienteId");
-
-                    b.ToTable("RegistroPresencas");
                 });
 
             modelBuilder.Entity("Unifisio_Api.Models.ConsultaProcedimento", b =>
@@ -594,25 +565,6 @@ namespace Unifisio_Api.Migrations
                         .IsRequired();
 
                     b.Navigation("Fisioterapeuta");
-                });
-
-            modelBuilder.Entity("RegistroPresenca", b =>
-                {
-                    b.HasOne("Unifisio_Api.Models.Fisioterapeuta", "Fisioterapeuta")
-                        .WithMany()
-                        .HasForeignKey("FisioterapeutaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Unifisio_Api.Models.Paciente", "Paciente")
-                        .WithMany()
-                        .HasForeignKey("PacienteId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Fisioterapeuta");
-
-                    b.Navigation("Paciente");
                 });
 
             modelBuilder.Entity("Unifisio_Api.Models.ConsultaProcedimento", b =>

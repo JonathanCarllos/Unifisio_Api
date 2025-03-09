@@ -17,6 +17,8 @@ namespace Unifisio_Api.Context
         public DbSet<ConsultaProcedimento> ConsultaProcedimentos { get; set; }
         public DbSet<RelatorioProdutividade> RelatorioProdutividades { get; set; }
         public DbSet<AgendamentoConsulta> AgendamentoConsultas { get; set; }
+        public DbSet<FisioterapeutaDisponibilidade> FisioterapeutaDisponibilidades { get; set; }
+        public DbSet<RegistroPresenca> RegistroPresencas { get; set; }
 
     }
 }
