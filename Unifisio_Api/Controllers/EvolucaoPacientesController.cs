@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Unifisio_Api.DTOs;
 using Unifisio_Api.Services.Interface;
@@ -7,6 +8,7 @@ namespace Unifisio_Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class EvolucaoPacientesController : ControllerBase
     {
         private readonly IEvolucaoPacienteService _service;

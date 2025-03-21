@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
 using Unifisio_Api.DTOs;
@@ -8,6 +9,7 @@ namespace Unifisio_Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class PlanoTratamentosController : ControllerBase
     {
         private readonly IPlanoTratamentoService _service;

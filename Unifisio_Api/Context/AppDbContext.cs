@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Unifisio_Api.Models;
 
 namespace Unifisio_Api.Context
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<ApplicationUser>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
@@ -19,6 +20,11 @@ namespace Unifisio_Api.Context
         public DbSet<AgendamentoConsulta> AgendamentoConsultas { get; set; }
         public DbSet<FisioterapeutaDisponibilidade> FisioterapeutaDisponibilidades { get; set; }
         public DbSet<RegistroPresenca> RegistroPresencas { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+        } 
 
     }
 }

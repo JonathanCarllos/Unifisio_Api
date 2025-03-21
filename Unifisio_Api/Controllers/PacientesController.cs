@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Unifisio_Api.DTOs;
 using Unifisio_Api.Services.Interface;
@@ -7,6 +8,7 @@ namespace Unifisio_Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class PacientesController : ControllerBase
     {
         private readonly IPacienteService _service;
@@ -17,6 +19,7 @@ namespace Unifisio_Api.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<PacienteDTO>>> Get()
         {
             var pacientes = await _service.GetPaciente();

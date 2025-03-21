@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Unifisio_Api.DTOs;
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize]
 public class RegistroPresencaController : ControllerBase
 {
     private readonly IRegistroPresencaService _service;

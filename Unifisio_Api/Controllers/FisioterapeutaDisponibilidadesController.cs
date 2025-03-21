@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 [Route("api/disponibilidade")]
 [ApiController]
+[Authorize]
 public class FisioterapeutaDisponibilidadesController : ControllerBase
 {
     private readonly IFisioterapeutaDisponibilidadeService _service;

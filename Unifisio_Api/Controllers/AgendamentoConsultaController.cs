@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -6,6 +7,7 @@ using Unifisio_Api.Services.Interface;
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize]
 public class AgendamentoConsultaController : ControllerBase
 {
     private readonly IAgendamentoConsultaService _service;
