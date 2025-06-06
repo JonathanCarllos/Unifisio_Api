@@ -31,7 +31,7 @@ namespace Unifisio_Api.Repository
 
         public async Task<IEnumerable<Fisioterapeuta>> GetAll()
         {
-           return await _context.Fisioterapeutas.ToListAsync();
+           return await _context.Fisioterapeutas.Include(x => x.Paciente).ToListAsync();
         }
 
         public async Task<Fisioterapeuta> GetById(int id)

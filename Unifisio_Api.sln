@@ -5,6 +5,10 @@ VisualStudioVersion = 17.13.35806.99
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unifisio_Api", "Unifisio_Api\Unifisio_Api.csproj", "{B6C8A341-FD1C-4B38-A941-ADCC6A8DD3B3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unifisio_Web", "Unifisio_Web\Unifisio_Web.csproj", "{7A682D32-2E2C-456F-B447-0BEC1DE19368}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unifisio_Library", "Unifisio_Library\Unifisio_Library.csproj", "{12086EC6-7855-4C96-BF58-44F1F08EB00C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{B6C8A341-FD1C-4B38-A941-ADCC6A8DD3B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6C8A341-FD1C-4B38-A941-ADCC6A8DD3B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6C8A341-FD1C-4B38-A941-ADCC6A8DD3B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A682D32-2E2C-456F-B447-0BEC1DE19368}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A682D32-2E2C-456F-B447-0BEC1DE19368}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A682D32-2E2C-456F-B447-0BEC1DE19368}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A682D32-2E2C-456F-B447-0BEC1DE19368}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12086EC6-7855-4C96-BF58-44F1F08EB00C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12086EC6-7855-4C96-BF58-44F1F08EB00C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12086EC6-7855-4C96-BF58-44F1F08EB00C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12086EC6-7855-4C96-BF58-44F1F08EB00C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

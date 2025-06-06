@@ -6,5 +6,6 @@ namespace Unifisio_Api.Models
     {
         public string? RefreshToken { get; set; }
         public DateTime RefreshTokenExpiryTime { get; set; }
+        public byte[]? ProfilePicture { get; set; }
     }
 }
