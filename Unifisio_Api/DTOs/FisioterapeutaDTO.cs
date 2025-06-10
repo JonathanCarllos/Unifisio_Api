@@ -22,7 +22,7 @@ namespace Unifisio_Api.DTOs
         [MaxLength(75)]
         public string? Email { get; set; }
 
-        [MaxLength(14), Required]
+        [MaxLength(20), Required]
         public string? Celular { get; set; }
 
         [MaxLength(20), Required]

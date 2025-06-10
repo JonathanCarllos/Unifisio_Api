@@ -1,3 +1,6 @@
+using Unifisio_Web.Services;
+using Unifisio_Web.Services.Interface;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,6 +10,8 @@ builder.Services.AddHttpClient("UnifisioApi", c =>
 {
     c.BaseAddress = new Uri(builder.Configuration["ServiceUri:UnifisioApi"]);
 });
+
+builder.Services.AddScoped<IFisioterapeutaService, FisioterapeutaService>();
 
 var app = builder.Build();
 

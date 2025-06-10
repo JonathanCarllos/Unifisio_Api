@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.Text;
+using System.Text.Json;
 using Unifisio_Web.Models;
 using Unifisio_Web.Services.Interface;
 
@@ -18,29 +19,103 @@ namespace Unifisio_Web.Services
             _options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
         }
 
-        public Task<FisioterapeutaViewModel> CreateFisioterapeuta(FisioterapeutaViewModel fisioterapeutaVM)
+        public async Task<FisioterapeutaViewModel> CreateFisioterapeuta(FisioterapeutaViewModel fisioterapeutaVM)
         {
-            throw new NotImplementedException();
+            var cliente = _clientFactory.CreateClient("UnifisioApi");
+
+            StringContent content = new StringContent(JsonSerializer.Serialize(fisioterapeutaVM),
+                Encoding.UTF8, "application/json");
+
+            using (var response = await cliente.PostAsync(apiEndpoint, content))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    var apiResponse = await response.Content.ReadAsStreamAsync();
+                    FisioterapeutaVM = await JsonSerializer
+                        .DeserializeAsync<FisioterapeutaViewModel>(apiResponse, _options);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            return FisioterapeutaVM;
         }
 
-        public Task<bool> DeleteFisioterapeutaById(int id)
+        public async Task<bool> DeleteFisioterapeutaById(int id)
         {
-            throw new NotImplementedException();
+            var cliente = _clientFactory.CreateClient("UnifisioApi");
+
+            using (var response = await cliente.DeleteAsync(apiEndpoint + id))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
-        public Task<FisioterapeutaViewModel> FindFisioterapeutaById(int id)
+        public async Task<FisioterapeutaViewModel> FindFisioterapeutaById(int id)
         {
-            throw new NotImplementedException();
+            var cliente = _clientFactory.CreateClient("UnifisioApi");
+
+            using (var response = await cliente.GetAsync(apiEndpoint + id))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    var apiResponse = await response.Content.ReadAsStreamAsync();
+                    FisioterapeutaVM = await JsonSerializer
+                        .DeserializeAsync<FisioterapeutaViewModel>(apiResponse, _options);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            return FisioterapeutaVM;
         }
 
-        public Task<IEnumerable<FisioterapeutaViewModel>> GetAllFisiotertapeuta()
+        public async Task<IEnumerable<FisioterapeutaViewModel>> GetAllFisiotertapeuta()
         {
-            throw new NotImplementedException();
+            var cliente = _clientFactory.CreateClient("UnifisioApi");
+
+            using (var response = await cliente.GetAsync(apiEndpoint))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    var apiResponse = await response.Content.ReadAsStreamAsync();
+                    FisioterapeutasVM = await JsonSerializer
+                        .DeserializeAsync<IEnumerable<FisioterapeutaViewModel>>(apiResponse, _options);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            return FisioterapeutasVM;
         }
 
-        public Task<FisioterapeutaViewModel> Update(FisioterapeutaViewModel viewModel)
+        public async Task<FisioterapeutaViewModel> Update(FisioterapeutaViewModel viewModel)
         {
-            throw new NotImplementedException();
+            var cliente = _clientFactory.CreateClient("UnifisioApi");
+
+            FisioterapeutaViewModel fisioterapeutaUpdate = new FisioterapeutaViewModel();
+
+            using (var response = await cliente.PutAsJsonAsync(apiEndpoint, viewModel))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    var apiResponse = await response.Content.ReadAsStreamAsync();
+                    fisioterapeutaUpdate = await JsonSerializer
+                        .DeserializeAsync<FisioterapeutaViewModel>(apiResponse, _options);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            return fisioterapeutaUpdate;
         }
     }
 }

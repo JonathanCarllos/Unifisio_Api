@@ -14,7 +14,7 @@ namespace Unifisio_Api.DTOs
         [MaxLength(14), Required]
         public string? CPF { get; set; }
 
-        [MaxLength(14), Required]
+        [MaxLength(20), Required]
         public string? Celular { get; set; }
 
         [MaxLength(20), Required]
@@ -60,7 +60,7 @@ namespace Unifisio_Api.DTOs
         [MaxLength(50)]
         public string? NomeResponsavel { get; set; }
 
-        [MaxLength(14)]
+        [MaxLength(20)]
         public string? CpfResponsavel { get; set; }
 
         [MaxLength(50)]

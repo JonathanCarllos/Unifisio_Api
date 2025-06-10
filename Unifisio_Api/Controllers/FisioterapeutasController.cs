@@ -7,8 +7,7 @@ using Unifisio_Api.Services.Interface;
 namespace Unifisio_Api.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
-    [Authorize]
+    [ApiController]   
     public class FisioterapeutasController : ControllerBase
     {
         private readonly IFisioterapeutaService _service;

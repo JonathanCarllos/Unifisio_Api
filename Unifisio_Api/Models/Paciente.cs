@@ -13,7 +13,7 @@ namespace Unifisio_Api.Models
         [MaxLength(14), Required]
         public string? CPF { get; set; }
 
-        [MaxLength(14), Required]
+        [MaxLength(20), Required]
         public string? Celular { get; set; }
 
         [MaxLength(20), Required]
@@ -53,7 +53,7 @@ namespace Unifisio_Api.Models
         [MaxLength(14)]
         public string? Telefone { get; set; }
 
-        [MaxLength(14), Required]
+        [MaxLength(20), Required]
         public string? CelularResponsavel { get; set; }
 
         [MaxLength(50)]
