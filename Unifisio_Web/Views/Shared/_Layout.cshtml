@@ -9,30 +9,39 @@
     <link rel="stylesheet" href="~/Unifisio_Web.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/all.min.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/fontawesome.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Styles.css" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/images/logo2.png" height="50px" width="180px"/></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+        <nav class="navbar navbar-expand-lg shadow-sm" style="background-color: #ffffff;">
+            <div class="container">
+                <!-- Logo -->
+                <a class="navbar-brand fw-bold" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/images/logo2.png" alt="Unifisio" height="50" class="me-2">
+                </a>
+
+                <!-- Botão hamburguer -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Menu de Navegação">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-center">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
+                <!-- Links -->
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav align-items-lg-center fw-semibold">
+                        <li class="nav-item mx-2">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Sobre">Sobre</a>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link text-dark" href="#sobre">Sobre</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contato">Contato</a>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link text-dark" href="#contato">Contato</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="" asp-action="Index">Login</a>
+                        <li class="nav-item mx-2">
+                            <a class="btn rounded-pill px-3" style="background-color:#00A7B5; color:white;" asp-area="" asp-controller="" asp-action="Index">
+                                Login
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -46,11 +55,57 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <!-- Footer -->
+    <div class="bg-dark text-light pt-5 pb-3 mt-5">
         <div class="container">
-            &copy; 2025 - Unifisio - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <div class="row">
+                <!-- Logo / Sobre -->
+                <div class="col-md-4 mb-4">
+                    <h4 class="fw-bold">UNIFISIO</h4>
+                    <p class="text-muted">
+                        Sistema completo de gestão para clínicas de fisioterapia.
+                        Tecnologia, agilidade e segurança para otimizar o seu dia a dia.
+                    </p>
+                </div>
+
+                <!-- Links úteis -->
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold">Links Úteis</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#sobre" class="text-light text-decoration-none">Sobre</a></li>
+                        <li><a href="#contato" class="text-light text-decoration-none">Contato</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Política de Privacidade</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Termos de Uso</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contato -->
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold">Contato</h5>
+                    <p class="mb-1"><i class="bi bi-geo-alt-fill me-2"></i> Rua Exemplo, 123 - São Paulo/SP</p>
+                    <p class="mb-1"><i class="bi bi-telephone-fill me-2"></i> (11) 98462-6235</p>
+                    <p class="mb-3"><i class="bi bi-envelope-fill me-2"></i> contato@unifisio.com</p>
+
+                    <!-- Redes sociais -->
+                    <a href="#" class="text-light me-3 fs-5"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-light me-3 fs-5"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="text-light fs-5"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+
+            <hr class="border-light">
+
+            <div class="text-center">
+                <p class="mb-0">&copy; @DateTime.Now.Year UNIFISIO - Todos os direitos reservados.</p>
+            </div>
         </div>
-    </footer>
+    </div>
+
+    <!-- Botão WhatsApp -->
+    <a href="https://wa.me/5511984626235" target="_blank" class="btn-whatsapp" title="Fale conosco no WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

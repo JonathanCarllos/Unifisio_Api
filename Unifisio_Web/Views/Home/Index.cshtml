@@ -3,7 +3,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div id="carouselExampleCaptions" class="carousel slide">
+<!-- Carrossel -->
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -11,33 +12,99 @@
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="..." class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>First slide label</h5>
-                <p>Some representative placeholder content for the first slide.</p>
+            <img src="~/images/slide1.jpg" class="d-block w-100" alt="Gestão de pacientes">
+            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center h-100 bg-dark bg-opacity-50">
+                <h2 class="fw-bold">Gestão Completa de Pacientes</h2>
+                <p>Cadastros, evoluções e prontuário eletrônico em um só lugar.</p>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Second slide label</h5>
-                <p>Some representative placeholder content for the second slide.</p>
+            <img src="~/images/slide2.jpg" class="d-block w-100" alt="Agenda online">
+            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center h-100 bg-dark bg-opacity-50">
+                <h2 class="fw-bold">Agendamento Inteligente</h2>
+                <p>Agenda online com lembretes automáticos para seus pacientes.</p>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Third slide label</h5>
-                <p>Some representative placeholder content for the third slide.</p>
+            <img src="~/images/slide3.jpg" class="d-block w-100" alt="Gestão financeira">
+            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center h-100 bg-dark bg-opacity-50">
+                <h2 class="fw-bold">Controle Financeiro Simplificado</h2>
+                <p>Boletos, PIX, notas fiscais e relatórios completos para sua clínica.</p>
             </div>
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
+        <span class="visually-hidden">Anterior</span>
     </button>
     <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
+        <span class="visually-hidden">Próximo</span>
     </button>
 </div>
+
+<!-- Sobre -->
+<section id="sobre" class="py-5">
+    <div class="container text-center">
+        <h2 class="mb-4 fw-bold">Unifisio – Sistema de Gestão para Clínicas de Fisioterapia</h2>
+        <p class="lead text-muted">
+            O <strong>Unifisio</strong> é a solução completa para modernizar sua clínica com tecnologia, agilidade e segurança.
+        </p>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <p><strong>✔ Gestão de Pacientes</strong> – cadastros, evoluções, exames e prontuário eletrônico com assinatura digital.</p>
+                <p><strong>✔ Agenda Online</strong> – marcações práticas, lembretes automáticos e disponibilidade de profissionais.</p>
+            </div>
+            <div class="col-md-6">
+                <p><strong>✔ Financeiro Integrado</strong> – boletos, PIX, notas fiscais e relatórios completos.</p>
+                <p><strong>✔ Dashboards e Relatórios</strong> – indicadores de produtividade, controle de estoque e evolução dos pacientes.</p>
+            </div>
+        </div>
+        <div class="mt-4">
+            <a href="#contato" class="btn btn-primary btn-lg rounded-pill px-4 shadow-sm">Solicite uma Demonstração</a>
+        </div>
+    </div>
+</section>
+
+<!-- Contato -->
+<section id="contato" class="py-5 bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="text-center mb-4">
+                    <h2 class="fw-bold">Entre em Contato</h2>
+                    <p class="text-muted">Preencha o formulário abaixo e nossa equipe retornará o mais rápido possível.</p>
+                </div>
+
+                <form class="p-4 border rounded-3 bg-white shadow-sm">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="nome" class="form-label">Nome</label>
+                            <input type="text" class="form-control shadow-sm" id="nome" placeholder="Seu nome completo" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input type="email" class="form-control shadow-sm" id="email" placeholder="seuemail@exemplo.com" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="telefone" class="form-label">Telefone</label>
+                            <input type="tel" class="form-control shadow-sm" id="telefone" placeholder="(00) 00000-0000">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="assunto" class="form-label">Assunto</label>
+                            <input type="text" class="form-control shadow-sm" id="assunto" placeholder="Digite o assunto">
+                        </div>
+                        <div class="col-12">
+                            <label for="mensagem" class="form-label">Mensagem</label>
+                            <textarea class="form-control shadow-sm" id="mensagem" rows="5" placeholder="Escreva sua mensagem..." required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <button type="submit" class="btn btn-primary btn-lg px-4 rounded-pill shadow-sm">Enviar Mensagem</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
