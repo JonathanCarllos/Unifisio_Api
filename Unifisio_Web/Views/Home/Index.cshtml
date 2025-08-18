@@ -4,44 +4,58 @@
 }
 
 <!-- Carrossel -->
-<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+<div id="carouselUnifisio" class="carousel slide" data-bs-ride="carousel">
+
+    <!-- Indicadores -->
     <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselUnifisio" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselUnifisio" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselUnifisio" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
+
+    <!-- Slides -->
     <div class="carousel-inner">
+
+        <!-- Slide 1 -->
         <div class="carousel-item active">
-            <img src="~/images/slide1.jpg" class="d-block w-100" alt="Gestão de pacientes">
-            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center h-100 bg-dark bg-opacity-50">
+            <img src="~/images/slide1.jpg" class="d-block w-100 carousel-img" alt="Gestão de pacientes">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-3">
                 <h2 class="fw-bold">Gestão Completa de Pacientes</h2>
                 <p>Cadastros, evoluções e prontuário eletrônico em um só lugar.</p>
             </div>
         </div>
+
+        <!-- Slide 2 (Agenda Online) -->
         <div class="carousel-item">
-            <img src="~/images/slide2.jpg" class="d-block w-100" alt="Agenda online">
-            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center h-100 bg-dark bg-opacity-50">
+            <img src="~/images/agenda.png" class="d-block w-100 carousel-img" alt="Agenda Online">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-3">
                 <h2 class="fw-bold">Agendamento Inteligente</h2>
                 <p>Agenda online com lembretes automáticos para seus pacientes.</p>
             </div>
         </div>
+
+        <!-- Slide 3 -->
         <div class="carousel-item">
-            <img src="~/images/slide3.jpg" class="d-block w-100" alt="Gestão financeira">
-            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center h-100 bg-dark bg-opacity-50">
+            <img src="~/images/slide3.jpg" class="d-block w-100 carousel-img" alt="Gestão Financeira">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-3">
                 <h2 class="fw-bold">Controle Financeiro Simplificado</h2>
                 <p>Boletos, PIX, notas fiscais e relatórios completos para sua clínica.</p>
             </div>
         </div>
+
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+
+    <!-- Botões de navegação -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselUnifisio" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Anterior</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselUnifisio" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Próximo</span>
     </button>
 </div>
+
 
 <!-- Sobre -->
 <section id="sobre" class="py-5">

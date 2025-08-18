@@ -1,4 +1,8 @@
-﻿/* Botão WhatsApp Flutuante */
+﻿body {
+    padding-top: 80px;
+}
+
+
 .btn-whatsapp {
     position: fixed;
     bottom: 20px;
